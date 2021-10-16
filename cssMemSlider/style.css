@@ -1,6 +1,6 @@
 @keyframes fadeInLeft {
   from {
-    transform: translate3d(50%, 0, 0);
+    transform: translate3d(40%, 0, 0);
     opacity: 0;
   }
   to {
@@ -10,17 +10,18 @@
 }
 
 body {
-  background-color: #25282A;
+  background-color: #d3d3d3;
   color: #fff;
+  margin: 0;
 }
 
 .container {
   display: flex;
   align-items: center;
-  max-width: 90%;
-  height: 100vh;
+  max-width: 80%;
+  height: 99vh;
   margin: 0 auto;
-  border: 1px solid red;
+  overflow: hidden;
 }
 
 img {
@@ -31,9 +32,17 @@ input {
   display: none;
 }
 
+.slider-wrapper {
+  background-color: #25282A;
+  padding: 3%;
+  padding-bottom: 1%;
+  border-radius: 10px;
+}
+
 .slides-wrapper {
   display: flex;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .slide-wrapper {
@@ -42,16 +51,19 @@ input {
 
 .slides-control-wrapper {
   display: flex;
+  align-items: center;
 }
 
 .text-wrapper {
-  font-size: 28px;
+  font-size: 165%;
 }
 
 .text-slide {
   display: none;
   overflow: hidden;
-  padding: 10px;
+  padding: .5em;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .labels-wrapper {
@@ -80,8 +92,8 @@ input {
 }
 
 .custom-radio:active .custom-radio-inner {
-  background-color: #EBEEF3;
-  border-color: #EBEEF3;
+  background-color: #dddddd;
+  border-color: #dddddd;
 }
 
 /* slide1 */
@@ -170,4 +182,35 @@ input {
   display: block;
   animation-name: fadeInLeft;
   animation-duration: .5s;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: block;
+    max-width: 96%;
+  }
+  .slider-wrapper {
+    margin-top: 3%;
+  }
+  .slides-control-wrapper {
+    flex-direction: column;
+  }
+  .text-wrapper {
+    order: 2;
+    margin-right: auto;
+  }
+  .labels-wrapper {
+    margin-top: 3%;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .text-wrapper {
+    font-size: 120%;
+  }
+  .custom-radio-inner {
+    width: 8px;
+    height: 8px;
+  }
 }
