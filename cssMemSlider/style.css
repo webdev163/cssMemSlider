@@ -1,9 +1,24 @@
+@keyframes fadeInLeft {
+  from {
+    transform: translate3d(50%, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
 body {
-  background-color: #e4e4e4;
+  background-color: #25282A;
+  color: #fff;
 }
 
 .container {
-  max-width: 80%;
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+  height: 100vh;
   margin: 0 auto;
   border: 1px solid red;
 }
@@ -13,7 +28,7 @@ img {
 }
 
 input {
-  /* display: none; */
+  display: none;
 }
 
 .slides-wrapper {
@@ -25,10 +40,134 @@ input {
   flex-basis: 100%;
 }
 
-.text-wrapper {
+.slides-control-wrapper {
   display: flex;
 }
 
+.text-wrapper {
+  font-size: 28px;
+}
+
 .text-slide {
-  /* opacity: 0; */
+  display: none;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.labels-wrapper {
+  margin-left: auto;
+  display: flex;
+}
+
+.custom-radio {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.custom-radio-inner {
+  width: 15px;
+  height: 15px;
+  display: block;
+  background-color: #71ABFE;
+  border: 3px solid #71ABFE;
+  border-radius: 50%;
+  transition: background-color .3s, border-color .3s;
+}
+
+.custom-radio:hover .custom-radio-inner {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.custom-radio:active .custom-radio-inner {
+  background-color: #EBEEF3;
+  border-color: #EBEEF3;
+}
+
+/* slide1 */
+
+#slide1:checked~.slider-inner-wrapper label[for=slide1] .custom-radio-inner {
+  background-color: transparent;
+  border-color: #648FCD;
+}
+
+#slide1:checked~.slider-inner-wrapper label[for=slide1]:hover .custom-radio-inner {
+  border-color: #fff;
+}
+
+#slide1:checked~.slider-inner-wrapper img {
+  transform: translateX(0);
+  transition: transform .3s;
+}
+
+#slide1:checked~.slider-inner-wrapper .text-wrapper .text-slide:nth-of-type(1) {
+  display: block;
+  animation-name: fadeInLeft;
+  animation-duration: .5s;
+}
+
+/* slide2 */
+
+#slide2:checked~.slider-inner-wrapper label[for=slide2] .custom-radio-inner {
+  background-color: transparent;
+  border-color: #648FCD;
+}
+
+#slide2:checked~.slider-inner-wrapper label[for=slide2]:hover .custom-radio-inner {
+  border-color: #fff;
+}
+
+#slide2:checked~.slider-inner-wrapper img {
+  transform: translateX(-100%);
+  transition: transform .3s;
+}
+
+#slide2:checked~.slider-inner-wrapper .text-wrapper .text-slide:nth-of-type(2) {
+  display: block;
+  animation-name: fadeInLeft;
+  animation-duration: .5s;
+}
+
+/* slide3 */
+
+#slide3:checked~.slider-inner-wrapper label[for=slide3] .custom-radio-inner {
+  background-color: transparent;
+  border-color: #648FCD;
+}
+
+#slide3:checked~.slider-inner-wrapper label[for=slide3]:hover .custom-radio-inner {
+  border-color: #fff;
+}
+
+#slide3:checked~.slider-inner-wrapper img {
+  transform: translateX(-200%);
+  transition: transform .3s;
+}
+
+#slide3:checked~.slider-inner-wrapper .text-wrapper .text-slide:nth-of-type(3) {
+  display: block;
+  animation-name: fadeInLeft;
+  animation-duration: .5s;
+}
+
+/* slide4 */
+
+#slide4:checked~.slider-inner-wrapper label[for=slide4] .custom-radio-inner {
+  background-color: transparent;
+  border-color: #648FCD;
+}
+
+#slide4:checked~.slider-inner-wrapper label[for=slide4]:hover .custom-radio-inner {
+  border-color: #fff;
+}
+
+#slide4:checked~.slider-inner-wrapper img {
+  transform: translateX(-300%);
+  transition: transform .3s;
+}
+
+#slide4:checked~.slider-inner-wrapper .text-wrapper .text-slide:nth-of-type(4) {
+  display: block;
+  animation-name: fadeInLeft;
+  animation-duration: .5s;
 }
